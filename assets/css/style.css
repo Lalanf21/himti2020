@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+
+body{
+    background-color: #e3f2fd;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.to_top {
+    background: white;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 6px 10px;
+    position: fixed;
+    left: 10px;
+    cursor: pointer;
+    bottom: 20px;
+    font-weight: bold;
+    z-index: 9999999;
+}
+
+li.sosmed a:hover{
+    background-color: grey;
+}
+
+section.jumbotron{
+    border: 1px solid black;
+    margin-top: 5px;
+    background-image: url('../img/background2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%; 
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 400px;
+    /* height: 400px; */
+}
+section.jumbotron .tulisan{
+    text-shadow: 1px 1.5px grey;
+    background-color: rgba(255,255,255, .7);
+}
+
+.carousel-item img{
+    height: 525px;
+}
+
+section.logo{
+    margin-bottom: 100px;
+    padding: 20px;
+}
+
+section.events {
+    background-color: white;
+    min-height: 500x;
+    margin-bottom: 50px;
+}
+
+section.galery{
+    min-height: 400px;
+    margin-bottom: 50px;
+}
+
+hr.baris{
+    width: 200px;
+    border: 2px solid orange;
+    border-radius: 5px;
+}
+
+/* artikel */
+.artikel,.events:hover{
+    box-shadow: 0px 40px 90px -6px #c7c5c7;
+    cursor: pointer;
+}
+
+@keyframes animasi{
+    to{
+        opacity: 0.5;
+        -ms-transform: scale(1.1); /* IE 9 */
+        transform: scale(1.1); /* Standard syntax */
+	}
+}
+
+.artikel:hover img.card-img-top{
+    animation: animasi 0.5s forwards;
+}
+
+.artikel{
+    overflow: hidden !important;
+}
+.artikel:hover a{
+    color: orange !important;
+}
+
+/* breadcrumb */
+ul.link-breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  text-align: right;
+}
+
+ul.link-breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+/* events */
+@keyframes fadeIn{
+    to{
+    opacity:1;
+}
+}
+
+.events .card-body {
+    height:300px !important;
+}
+
+.beranda-events .card-body {
+    height: 200px !important;
+}
+
+.tanggal{
+    opacity: 0;
+}
+
+.events:hover .tanggal{
+    animation: fadeIn 1s forwards;
+}
+
+/* asdsa */
+.hovercard .cardheader {
+    height: 135px;
+}
+
+.hovercard {
+    position: relative;
+    padding-top: 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: rgba(214, 224, 226, 0.2);
+}
+
+.hovercard .avatar {
+    position: relative;
+    top: -50px;
+    margin-bottom: -50px;
+}
+
+.hovercard .avatar img {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.5);
+}
+
