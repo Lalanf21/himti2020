@@ -133,8 +133,8 @@
 			$this->email->to( $email );
 
 			$this->email->subject('Pendaftaran slot talkshow Himti '); 
-			$peserta = ['peserta'=>$nama];
-			$this->email->message($this->load->view('front-end/talkshow/v_email',$peserta, TRUE));
+			$data['peserta'] = $nama;
+			$this->email->message($this->load->view('front-end/talkshow/v_email',$data, TRUE));
 
 			$cek = $this->email->send();
 			

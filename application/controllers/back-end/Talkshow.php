@@ -23,6 +23,74 @@
 			$this->load->view('back-end/template' , $data);
 		}
 
+		public function form_send_emails()
+		{
+			$data['title'] = 'Kirim link';
+			$data['konten'] = 'back-end/talkshow/send_mail';
+			$this->load->view('back-end/template' , $data);
+		}
+
+		public function send_emails()
+		{
+			$link = htmlspecialchars(htmlentities($this->input->post('link',true)));
+
+			$data = $this->logic->get_all('tbl_talkshow')->result();
+			foreach ($data as $key){
+				$nama_peserta = $key->nama;
+				$email = $key->email;
+
+				$this->_send($link,$nama_peserta,$email);
+			}
+
+			$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Berhasil di kirim</strong> 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>');
+                redirect('list-peserta');
+		}
+
+		private function _send($link, $nama, $email)
+		{
+			$config = [
+				'protocol' 	=>'smtp',
+				'smtp_host' =>'mail.himti-umt.org',
+				'smtp_port'	=> '587',
+				'smtp_user'	=>'humas@himti-umt.org',
+				'smtp_pass'	=>'Humas2020',
+				'mailtype'	=>'html',
+				'charset'   =>'utf-8'
+			];
+
+			$this->load->library('email', $config);
+			// $this->email->initialize($config); 
+
+			$this->email->set_newline("\r\n");
+
+			$this->email->from('humas@himti-umt.org', 'Link zoom meets '); 
+			$this->email->to( $email );
+
+			$this->email->subject('Link zoom meets || Talkshow Data Security 2020 HIMTI'); 
+			$data['peserta'] = $nama;
+			$data['link'] = $link;
+			$this->email->message($this->load->view('back-end/talkshow/v_email',$data, TRUE));
+
+			$cek = $this->email->send();
+			
+			if ( $cek ) {
+				return true;
+			} else { 
+				$this->session->set_flashdata('pesan', $this->email->print_debugger('<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong></strong> 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>'));
+                redirect('form-send-emails');
+			}
+		}
+
 		public function export_excel()
 		{
 			$spreadsheet = new Spreadsheet();

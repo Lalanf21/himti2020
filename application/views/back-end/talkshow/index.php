@@ -11,7 +11,7 @@
             <a href="<?=site_url('export-excel') ?>" class="btn btn-small btn-primary my-3">
                <i class="fas fa-print"></i> Export to excel
             </a>
-            <a href="#" class="btn btn-small btn-secondary my-3">
+            <a href="<?=site_url('form-send-emails') ?>" class="btn btn-small btn-secondary my-3">
                <i class="fas fa-envelope"></i> Kirim email
             </a>
         </div>

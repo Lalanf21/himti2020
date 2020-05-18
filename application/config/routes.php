@@ -204,6 +204,8 @@ $route['get_nim'] = 'back-end/pengguna/get_nim';
 // **************************************************************
 $route['list-peserta'] = 'back-end/talkshow';
 $route['export-excel'] = 'back-end/talkshow/export_excel';
+$route['form-send-emails'] = 'back-end/talkshow/form_send_emails';
+$route['send-emails'] = 'back-end/talkshow/send_emails';
 // ***************************************************************
 
 $route['login'] = 'back-end/auth';
