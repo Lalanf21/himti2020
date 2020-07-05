@@ -21,7 +21,7 @@
         <?php foreach ($events as $key) : ?>
             <div class="col-md-4 col-sm-6">
                 <div class="card events mb-4">
-                    <img src="<?= base_url('assets/img/events/medium/' . $key->gambar) ?> " height="300" class="card-img-top">
+                    <img src="<?= base_url('assets/img/events/medium/' . $key->gambar) ?> " height="300" class="card-img-top img-fluid">
                     <div class="card-body">
                         <div class="tanggal">
                             <p class="text-muted small text-right"><i class="fas fa-calendar"></i> <?= tanggal_indo($key->tanggal) ?></p>
@@ -30,9 +30,6 @@
                             <?= $key->nama_events ?>
                         </p>
                         <hr class="baris">
-                        <p class="card-text">
-                            <?= word_limiter($key->deskripsi, 15) ?>
-                        </p>
                         <p class="card-link text-right">
                             <a href="<?= site_url('read-events/' . $key->slug) ?>">Selengkapnya</a>
                         </p>

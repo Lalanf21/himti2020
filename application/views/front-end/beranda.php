@@ -87,11 +87,8 @@
 					<h3 class="card-title text-center">
 						<?= $value->nama_events ?>
 					</h3>
-					<img src="<?= base_url('assets/img/events/large/'.$value->gambar) ?>" class="card-img-top" alt="...">
-					<div class="card-body">
-						<p class="card-text">
-							<?= word_limiter($value->deskripsi,10) ?>
-						</p>
+					<img src="<?= base_url('assets/img/events/large/'.$value->gambar) ?>" class="card-img-top img-fluid" alt="...">
+					<div class="card-footer">
 						<p class="text-center"> 
 							<a href="<?=site_url('read-events/'.$value->slug) ?>" class="btn btn-outline-primary">Selengkapnya </a> 
 						</p>

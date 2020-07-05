@@ -83,21 +83,17 @@
             <?php foreach ($other_events as $value) : ?>
                 <div class="col-md-6 col-lg-4">
                     <div class="card events mb-4">
-                        <img src="<?= base_url('assets/img/events/medium/' . $value->gambar) ?> " class="card-img-top">
+                        <img src="<?= base_url('assets/img/events/medium/' . $value->gambar) ?> " class="card-img-top img-fluid">
                         <div class="card-body">
                             <div class="tanggal">
                                 <p class="text-muted small text-right"><i class="fas fa-calendar"></i> <?= tanggal_indo($value->tanggal) ?></p>
                             </div>
-                            <p class="my-3 text-center font-weight-bold card-footer">
-                                <?= $value->nama_events ?>
+                            <p class="text-center">
+                                <a href="<?= site_url('read-events/' . $value->slug) ?>" class="my-3 font-weight-bold card-footer">
+                                    <?= $value->nama_events ?>
+                                </a>
                             </p>
                             <hr class="baris">
-                            <p class="card-text">
-                                <?= word_limiter($value->deskripsi, 4) ?>
-                            </p>
-                            <p class="card-link text-right">
-                                <a href="<?= site_url('read-events/' . $key->slug) ?>">Selengkapnya</a>
-                            </p>
                         </div>
                     </div>
                 </div>

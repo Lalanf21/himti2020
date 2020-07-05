@@ -9,9 +9,10 @@ class M_himti extends CI_Model
 		return $this->db->get($table);
 	}
 	
-	public function get_limit($table, $limit, $start,$where = null) 
+	public function get_limit($table, $limit, $start,$where = null, $sort = null) 
 	{	
 		if ($where){
+			$this->db->order_by($sort[0],$sort[1]);
 			$this->db->where($where);
 			return $this->db->get($table, $limit, $start);
 		} else{

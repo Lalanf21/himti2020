@@ -58,7 +58,7 @@ class Artikel extends CI_controller{
         $this->pagination->initialize($config);
 
         $data['value'] = $this->logic->get_all('tbl_home_setting')->row();
-        $data['artikel'] = $this->logic->get_limit('tbl_artikel',$limit,$off,['publish'=>1])->result();
+        $data['artikel'] = $this->logic->get_limit('tbl_artikel',$limit,$off,['publish'=>1],['tanggal','DESC'])->result();
         $data['konten'] = 'front-end/blog/blog-list';
         $this->load->view('front-end/template',$data);
     }
