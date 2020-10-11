@@ -178,6 +178,11 @@
                         <span>Galery</span></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="<?= site_url('list-calon-anggota') ?>">
+                        <i class="fas fa-fw fa-user-cog"></i>
+                        <span>calon anggota</span></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="<?= site_url('list-peserta') ?>">
                         <i class="fas fa-fw fa-fingerprint"></i>
                         <span>Talkshow Data Security</span></a>
@@ -253,6 +258,11 @@
                     <a class="nav-link" href="">
                         <i class="fas fa-fw fa-images"></i>
                         <span>Galery</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= site_url('list-calon-anggota') ?>">
+                        <i class="fas fa-fw fa-user-cog"></i>
+                        <span>calon anggota</span></a>
                 </li>
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">

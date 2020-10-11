@@ -91,10 +91,17 @@ $route['kontak-kami'] = 'front-end/contact';
 
 // 6. Seminar Online
 // *************************************************
-$route['talkshow-data-security'] = 'front-end/talkshow';
-$route['register-talkshow-data-security'] = 'front-end/talkshow/form_register';
-$route['save-peserta'] = 'front-end/talkshow/save';
+// $route['talkshow-data-security'] = 'front-end/talkshow';
+// $route['register-talkshow-data-security'] = 'front-end/talkshow/form_register';
+// $route['save-peserta'] = 'front-end/talkshow/save';
 // *************************************************
+
+// 7. pendaftaran anggota baru
+// *************************************************
+$route['pendaftaran-calon-anggota'] = 'front-end/pendaftaranAnggota';
+$route['save-calon-anggota'] = 'front-end/pendaftaranAnggota/add';
+// *************************************************
+
 // akhir front-end
 // ################################################
 
@@ -207,6 +214,12 @@ $route['export-excel'] = 'back-end/talkshow/export_excel';
 $route['form-send-emails'] = 'back-end/talkshow/form_send_emails';
 $route['send-emails'] = 'back-end/talkshow/send_emails';
 // ***************************************************************
+
+// 13. Calon anggota
+// **************************************************************
+$route['list-calon-anggota'] = 'back-end/calonAnggota';
+$route['export-excel-calon-anggota'] = 'back-end/calonAnggota/export_excel';
+// **************************************************************
 
 $route['login'] = 'back-end/auth';
 $route['login/proses'] = 'back-end/auth/proses_login';
